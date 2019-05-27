@@ -1,3 +1,4 @@
+/*
 CREATE DATABASE db;
 USE db;
 CREATE TABLE kullanici
@@ -10,3 +11,20 @@ CREATE TABLE kullanici
 INSERT INTO kullanici
 SET ad="yunus",
     soyad="üstün";
+ */
+/*
+USE db;
+CREATE TABLE dersler
+(
+    id INT NOT NULL AUTO_INCREMENT,
+    baslik VARCHAR(222),
+    icerik TEXT,
+    onay INT,
+    tarih TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY (id)
+)
+INSERT INTO dersler
+SET baslik="matematik",
+    icerik="diferansiyel denklemler",
+    onay=1;
+ */
