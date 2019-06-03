@@ -1,3 +1,5 @@
+<?php require_once "header.php"; ?>
+
 <?php
 
 require_once "baglan.php";
@@ -14,6 +16,10 @@ switch ($_GET["sayfa"]){
 
     case "insert";
         require_once "insert.php";
+    break;
+
+    case "oku";
+        require_once "oku.php";
     break;
 
 }
