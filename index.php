@@ -25,6 +25,10 @@ switch ($_GET["sayfa"]){
     case "guncelle";
         require_once "guncelle.php";
     break;
+
+    case "sil";
+        require_once "sil.php";
+    break;
 }
 
 ?>

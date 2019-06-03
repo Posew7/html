@@ -1,4 +1,4 @@
-
+/*
 CREATE DATABASE ders;
 USE ders;
 
@@ -11,3 +11,14 @@ CREATE TABLE dersler
     tarih TIMESTAMP DEFAULT current_timestamp,
     PRIMARY KEY (id)
 );
+*/
+/*
+USE ders;
+
+CREATE TABLE kategoriler
+(
+    id INT AUTO_INCREMENT,
+    ad VARCHAR(222),
+    PRIMARY KEY (id)
+);
+ */
