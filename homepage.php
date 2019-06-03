@@ -19,7 +19,7 @@ $dersler = $sorgu->fetchAll(PDO::FETCH_ASSOC);
         <?php if ($ders["onay"] == 1): ?>
             <a href="index.php/?sayfa=oku&id=<?php print $ders["id"] ?>">[OKU]</a>
         <?php endif ?>
-        <a href="">[DÜZENLE]</a>
+        <a href="index.php/?sayfa=guncelle&id=<?php print $ders["id"] ?>">[DÜZENLE]</a>
         <a href="">[SİL]</a>
     </li>
     <?php endforeach ?>

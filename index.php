@@ -22,6 +22,9 @@ switch ($_GET["sayfa"]){
         require_once "oku.php";
     break;
 
+    case "guncelle";
+        require_once "guncelle.php";
+    break;
 }
 
 ?>
