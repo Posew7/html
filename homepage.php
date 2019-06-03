@@ -1,6 +1,4 @@
-<?php
-    require_once "header.php";
-?>
+
 
 <h3>Dersler</h3>
 

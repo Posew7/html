@@ -29,6 +29,18 @@ switch ($_GET["sayfa"]){
     case "sil";
         require_once "sil.php";
     break;
+
+    case "kategoriler";
+        require_once "kategoriler.php";
+    break;
+
+    case "kategori_ekle";
+        require_once "kategori_ekle.php";
+    break;
+
+    case "kategori_sil";
+        require_once "kategori_sil.php";
+    break;
 }
 
 ?>

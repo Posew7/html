@@ -1,0 +1,22 @@
+<?php
+
+if (isset($_POST["ad"])) {
+    if (empty($_POST["ad"])) {
+        print "kategori adı boş geçilemez !";
+    } else {
+        $sorgu = $db->prepare("INSERT INTO kategoriler SET ad = ?");
+        $ekle = $sorgu->execute([$_POST["ad"]]);
+        if ($ekle) {
+            header("Location:index.php/?sayfa=kategoriler");
+        } else {
+            print "kategori eklenemedi";
+        }
+    }
+}
+
+?>
+<form action="" method="post">
+    Kategori Adı : <br>
+    <input type="text" name="ad"> <br>
+    <button type="submit">Gönder</button>
+</form>

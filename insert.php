@@ -12,6 +12,8 @@ if ($ekle) {
 }
 */
 
+$kategoriler = $db->query("SELECT * FROM kategoriler ORDER BY ad ASC ")->fetchAll(PDO::FETCH_ASSOC);
+
 if (isset($_POST["submit"])) {
 
     $baslik = isset($_POST["baslik"]) ? $_POST["baslik"] : null;
@@ -43,7 +45,13 @@ if (isset($_POST["submit"])) {
 
     İçerik : <br>
     <textarea name="icerik" cols="30" rows="5"><?php print isset($_POST["icerik"]) ? $_POST["icerik"] : "" ?></textarea> <br> <br>
-
+    Kategori : <br>
+    <select name="kategori_id">
+        <?php foreach ($kategoriler as $kategori): ?>
+            <option value="<?php  $kategori["id"] ?>"><?php print $kategori["ad"]  ?></option>
+        <?php endforeach ?>
+    </select> <br><br>
+    Onay Durumu : <br>
     <select name="onay">
         <option value="1">Onaylı</option>
         <option value="0">Onaylı Değil</option>
