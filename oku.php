@@ -10,7 +10,7 @@ if (!isset($_GET["id"]) || empty($_GET["id"])) {
 $sorgu = $db->prepare("SELECT * FROM dersler WHERE id = ? && onay= 1");
 $sorgu->execute([$_GET["id"]]);
 $ders = $sorgu->fetch(PDO::FETCH_ASSOC);
-print_r($ders);
+
 
 if (!$ders) {
     header("Location:index.php");

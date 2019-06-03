@@ -19,14 +19,16 @@ if (isset($_POST["submit"])) {
     $baslik = isset($_POST["baslik"]) ? $_POST["baslik"] : null;
     $icerik = isset($_POST["icerik"]) ? $_POST["icerik"] : null;
     $onay = isset($_POST["onay"]) ? $_POST["onay"] : 0;
+    $kategori_id = isset($_POST["kategori_id"]) ? $_POST["kategori_id"] : null;
+
 
     if (!$baslik) {
         print "başlık ekleyin";
     } elseif (!$icerik) {
         print "içerik ekleyin";
     } else {
-        $sorgu = $db->prepare("INSERT INTO dersler SET baslik = ?, icerik = ?, onay = ?");
-        $ekle = $sorgu->execute([$baslik, $icerik, $onay]);
+        $sorgu = $db->prepare("INSERT INTO dersler SET baslik = ?, icerik = ?, kategori_id = ?, onay = ?");
+        $ekle = $sorgu->execute([$baslik, $icerik, $kategori_id, $onay]);
         if ($ekle) {
             header("Location:index.php");
         } else {
@@ -44,11 +46,13 @@ if (isset($_POST["submit"])) {
     <input type="text" value="<?php print isset($_POST["baslik"]) ? $_POST["baslik"] : "" ?>" name="baslik"> <br> <br>
 
     İçerik : <br>
-    <textarea name="icerik" cols="30" rows="5"><?php print isset($_POST["icerik"]) ? $_POST["icerik"] : "" ?></textarea> <br> <br>
+    <textarea name="icerik" cols="30" rows="5"><?php print isset($_POST["icerik"]) ? $_POST["icerik"] : "" ?></textarea>
+    <br> <br>
     Kategori : <br>
     <select name="kategori_id">
+        <option value="">-- kategori seçin --</option>
         <?php foreach ($kategoriler as $kategori): ?>
-            <option value="<?php  $kategori["id"] ?>"><?php print $kategori["ad"]  ?></option>
+            <option value="<?php print $kategori["id"] ?>"><?php print $kategori["ad"] ?></option>
         <?php endforeach ?>
     </select> <br><br>
     Onay Durumu : <br>
