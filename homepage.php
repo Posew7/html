@@ -1,1 +1,0 @@
-<a href="insert.php">İçerik Ekle</a>

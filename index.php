@@ -7,13 +7,11 @@ if (!isset($_GET["sayfa"])){
 }
 
 switch ($_GET["sayfa"]){
-        case "insert";
-            require_once "insert.php";
-        break;
 
-        case "index";
-            require_once "homepage.php";
-        break;
+    case "insert";
+        require_once "insert.php";
+    break;
+
 }
 
 ?>
